@@ -216,3 +216,10 @@ body._lock {
   padding: 1.5rem 2rem;
   border-radius: 10px;
 }
+
+.quiz__number {
+  color: #51a390;
+  font-weight: 700;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #51a390;
+}
