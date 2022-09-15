@@ -23,3 +23,10 @@ html {
   margin: 0;
   border: 0;
 }
+
+:active,
+:focus,
+a:active,
+a:focus {
+  outline: 0;
+}
