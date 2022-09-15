@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,27 @@
   <script defer src="/app/app.js"></script>
   <title>THE QUIZ GAME by Samir Hanna</title>
 </head>
+
 <body>
-  <div class="quiz"> 
-		<div class="quiz__container">
-			<div class="quiz__number">
-				Question
-				<span class="quiz__span question__number"></span> of
-				<span class="quiz__span question__all-numbers"></span>
-			</div>
+  <div class="quiz">
+    <div class="quiz__container">
+      <div class="quiz__number">
+        Question
+        <span class="quiz__span question__number"></span> of
+        <span class="quiz__span question__all-numbers"></span>
+      </div>
+      <div class="quiz__question question"></div>
+      <div class="quiz__answers answers">
+        <div data-id="0" class="answers__option answers__option-1"></div>
+        <div data-id="1" class="answers__option answers__option-2"></div>
+        <div data-id="2" class="answers__option answers__option-3"></div>
+        <div data-id="3" class="answers__option answers__option-4"></div>
+      </div>
+      <div class="quiz__button">
+        <button class="quiz__btn">Next</button>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
