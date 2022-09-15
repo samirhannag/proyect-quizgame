@@ -223,3 +223,11 @@ body._lock {
   padding-bottom: 1rem;
   border-bottom: 1px solid #51a390;
 }
+.quiz__question {
+  padding: 1rem 0;
+  font-size: 2rem;
+}
+
+.quiz__answers {
+  padding: 1rem 0;
+}
