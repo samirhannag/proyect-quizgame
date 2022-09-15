@@ -1,4 +1,4 @@
-const question = document.querySelector('.question'), 
+const randomQuestion = document.querySelector('.question'), 
 		numberOfQuestion = document.querySelector('.question__number'),
 		numberOfAllQuestions = document.querySelector('.question__all-numbers')
 ;
@@ -199,3 +199,30 @@ const load = () => {
 };
 
 let completedAnswers = [];
+const question = () =>{
+let randomNumber = Math.floor(Math.random() * questions.length);
+let hitDuplicate = false;
+
+if (indexOfPage == questions.length){
+  quizFinish();
+} else {
+  if (completedAnswers.length > 0) {
+    completedAnswers.forEach(item => {
+      if (item == randomNumber) {
+        hitDuplicate = true;
+      }
+    });
+    if (hitDuplicate) {
+      randomQuestion()
+    } else {
+      indexOfQuestions = randomNumber;
+      load();
+    }
+  }
+  if (completedAnswers == 0) {
+    indexOfQuestions = randomNumber;
+    load();
+  }
+}
+completedAnswers.push(indexOfQuestions);
+};
