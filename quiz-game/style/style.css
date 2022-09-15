@@ -56,3 +56,48 @@ button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font: 400 1.6rem/1.5 "Exo 2",sans-serif;
+  background:#407088;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+body._lock {
+  overflow: hidden;
+}
