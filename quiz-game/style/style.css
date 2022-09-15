@@ -257,7 +257,7 @@ body._lock {
   padding: .5rem 4rem;
 }
 
-.quiz__tracker {
+/* .quiz__tracker {
   padding-top: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -268,4 +268,9 @@ body._lock {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 1rem;
+} */
+
+.answers>:not(:last-child) {
+  margin-bottom: .8rem;
 }
+
