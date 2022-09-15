@@ -305,3 +305,24 @@ body._lock {
 .answers__option._disabled {
   pointer-events: none;
 }
+@media (max-width:1200px) {
+  .popup__content {
+    padding: calc(1rem + 10 * (100vw - 320px)/ 880) calc(3rem + 70 * (100vw - 320px)/ 880);
+  }
+
+  .popup__title {
+    font-size: calc(2rem + 8 * (100vw - 320px)/ 880);
+  }
+
+  .popup__text {
+    font-size: calc(1.6rem + 4 * (100vw - 320px)/ 880);
+  }
+
+  .quiz__question {
+    font-size: calc(1.6rem + 4 * (100vw - 320px)/ 880);
+  }
+
+  .answers {
+    font-size: calc(1.4rem + 2 * (100vw - 320px)/ 880);
+  }
+}
