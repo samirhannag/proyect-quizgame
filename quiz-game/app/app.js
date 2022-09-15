@@ -250,4 +250,15 @@ const enabledOptions = () => {
 	});
 }
 
+const validate = () => {
+	if (!options[0].classList.contains('_disabled')) {
+		alert('Choose one of the answer options');
+	} else {
+		randomQuestion();
+		enabledOptions();
+	}
+}
+
+
+nextBtn.addEventListener('click', validate);
 
