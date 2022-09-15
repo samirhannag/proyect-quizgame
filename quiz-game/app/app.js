@@ -23,3 +23,16 @@ let indexOfQuestions,
 	 indexOfPage = 0;
 
 let score = 0;
+
+const questions = [
+
+	{
+		question: `In sports, What does NBA stands for?`,
+		options: [
+			`National Bussiness Association`, 
+			`National Basketball Association`,
+			`Not Boring at All`,
+			`National Beef Association`,
+		], 
+		rightAnswer: 1, 
+	}]
