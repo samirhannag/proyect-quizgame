@@ -207,3 +207,12 @@ body._lock {
   justify-content: center;
   padding: 1rem;
 }
+
+.quiz__container {
+  background: #fff;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+}
