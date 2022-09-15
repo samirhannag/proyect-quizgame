@@ -11,3 +11,15 @@ const option_1 = document.querySelector('.answers__option-1'),
 ;
 
 const nextBtn = document.querySelector('.quiz__btn');
+
+const correctAnswers_popup = document.querySelector('.popup__correct'), 
+		numberOfAllQuestions_popup = document.querySelector('.popup__all-questions'), 
+		tryAgainBtn_popup = document.querySelector('.popup__try-again');
+;
+
+const popup = document.querySelector('.popup');
+
+let indexOfQuestions, 
+	 indexOfPage = 0;
+
+let score = 0;
