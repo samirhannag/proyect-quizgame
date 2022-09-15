@@ -236,3 +236,23 @@ body._lock {
   padding: 1rem 0;
   border-bottom: 1px solid #51a390;
 }
+
+.quiz__btn {
+  background: rgba(81,163,144,.7);
+  border-radius: 4px;
+  -webkit-transition: background .3s;
+  -o-transition: background .3s;
+  transition: background .3s;
+  min-height: 35px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #fff;
+  padding: .5rem 4rem;
+}
