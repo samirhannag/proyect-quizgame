@@ -9,3 +9,5 @@ const option_1 = document.querySelector('.answers__option-1'),
       option_3 = document.querySelector('.answers__option-3'), 
       option_4 = document.querySelector('.answers__option-4')
 ;
+
+const nextBtn = document.querySelector('.quiz__btn');
