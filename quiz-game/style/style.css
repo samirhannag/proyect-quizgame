@@ -30,3 +30,24 @@ a:active,
 a:focus {
   outline: 0;
 }
+
+aside,
+footer,
+header,
+nav {
+  display: block;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
