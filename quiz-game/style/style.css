@@ -231,3 +231,8 @@ body._lock {
 .quiz__answers {
   padding: 1rem 0;
 }
+
+.quiz__button {
+  padding: 1rem 0;
+  border-bottom: 1px solid #51a390;
+}
