@@ -262,3 +262,21 @@ const validate = () => {
 
 nextBtn.addEventListener('click', validate);
 
+options.forEach(item => {
+	item.addEventListener('click', e => checkAnswer(e));
+})
+
+const quizFinish = () => {
+	popup.classList.add('_open');
+	document.body.classList.remove('_lock');
+	correctAnswers_popup.innerHTML = score;
+	numberOfAllQuestions_popup.innerHTML = questions.length;
+};
+
+tryAgainBtn_popup.addEventListener('click', () => {
+	window.location.reload();
+})
+
+window.addEventListener('load', () => {
+	randomQuestion();
+})
