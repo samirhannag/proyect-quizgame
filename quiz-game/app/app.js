@@ -182,3 +182,20 @@ const questions = [
 	},
 
 ]
+
+numberOfAllQuestions.innerHTML = questions.length;
+
+const load = () => {
+	question.innerHTML = questions[indexOfQuestions].question;
+
+	option_1.innerHTML = questions[indexOfQuestions].options[0];
+	option_2.innerHTML = questions[indexOfQuestions].options[1];
+	option_3.innerHTML = questions[indexOfQuestions].options[2];
+	option_4.innerHTML = questions[indexOfQuestions].options[3];
+
+	numberOfQuestion.innerHTML = indexOfPage + 1;
+
+	indexOfPage ++;
+};
+
+let completedAnswers = [];
