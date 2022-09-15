@@ -200,8 +200,6 @@ const load = () => {
 
 let completedAnswers = [];
 const question = () =>{
-let randomNumber = Math.floor(Math.random() * questions.length);
-let hitDuplicate = false;
 
 if (indexOfPage == questions.length){
   quizFinish();
@@ -226,3 +224,30 @@ if (indexOfPage == questions.length){
 }
 completedAnswers.push(indexOfQuestions);
 };
+
+const checkAnswer = e => {
+	if (e.target.dataset.id == questions[indexOfQuestions].rightAnswer) {
+		e.target.classList.add('_right');
+		score++;
+	} else{
+		e.target.classList.add('_wrong');
+	}
+	disabledOptions();
+};
+
+const disabledOptions = () => {
+	options.forEach(item => {
+		item.classList.add('_disabled');
+		if (item.dataset.id == questions[indexOfQuestions].rightAnswer) {
+			item.classList.add('_right');
+		}
+	});
+}
+
+const enabledOptions = () => {
+	options.forEach(item => {
+		item.classList.remove('_disabled', '_right', '_wrong');
+	});
+}
+
+
