@@ -128,3 +128,34 @@ body._lock {
   -o-transition: .8s;
   transition: .8s;
 }
+
+.popup._open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.popup._open .popup__content {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transform: perspective(700px) translateY(0) rotateX(0);
+  transform: perspective(700px) translateY(0) rotateX(0);
+  opacity: 1;
+}
+
+.popup__content {
+  background: #51a390;
+  text-align: center;
+  position: relative;
+  border-radius: 10px;
+  color: #fff;
+  max-width: 700px;
+  padding: 2rem 10rem;
+  -webkit-transform: perspective(700px) translateY(-100%) rotateX(45deg);
+  transform: perspective(700px) translateY(-100%) rotateX(45deg);
+  opacity: 0;
+  -webkit-transition: .8s;
+  -o-transition: .8s;
+  transition: .8s;
+}
