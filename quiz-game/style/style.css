@@ -326,3 +326,18 @@ body._lock {
     font-size: calc(1.4rem + 2 * (100vw - 320px)/ 880);
   }
 }
+
+@media (any-hover:hover) {
+  .popup__try-again:hover {
+    color: #51a390;
+    background-color: #fff;
+  }
+
+  .quiz__btn:hover {
+    background: #51a390;
+  }
+
+  .answers__option:hover {
+    background: rgba(128,128,128,.7);
+  }
+}
