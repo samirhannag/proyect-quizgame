@@ -274,3 +274,34 @@ body._lock {
   margin-bottom: .8rem;
 }
 
+.answers__option {
+  cursor: pointer;
+  width: 100%;
+  min-height: 35px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: .5rem 1rem;
+  background: rgba(128,128,128,.4);
+  border-radius: 4px;
+  -webkit-transition: background .3s;
+  -o-transition: background .3s;
+  transition: background .3s;
+}
+
+.answers__option._right {
+  color: #fff;
+  background: rgba(81,163,144,.7);
+}
+
+.answers__option._wrong {
+  color: #fff;
+  background: rgba(255,0,0,.5);
+}
+
+.answers__option._disabled {
+  pointer-events: none;
+}
