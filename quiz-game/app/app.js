@@ -1,28 +1,29 @@
-const randomQuestion = document.querySelector('.question'), 
+const question = document.querySelector('.question'), 
 		numberOfQuestion = document.querySelector('.question__number'),
 		numberOfAllQuestions = document.querySelector('.question__all-numbers')
-;
 
-const options = document.querySelectorAll('.answers__option');
+const options = document.querySelectorAll('.answers__option')
 const option_1 = document.querySelector('.answers__option-1'), 
       option_2 = document.querySelector('.answers__option-2'), 
       option_3 = document.querySelector('.answers__option-3'), 
       option_4 = document.querySelector('.answers__option-4')
-;
 
-const nextBtn = document.querySelector('.quiz__btn');
+
+const nextBtn = document.querySelector('.quiz__btn')
+
+const tracker = document.querySelector('.quiz__tracker')
 
 const correctAnswers_popup = document.querySelector('.popup__correct'), 
 		numberOfAllQuestions_popup = document.querySelector('.popup__all-questions'), 
 		tryAgainBtn_popup = document.querySelector('.popup__try-again');
-;
 
-const popup = document.querySelector('.popup');
+
+const popup = document.querySelector('.popup')
 
 let indexOfQuestions, 
-	 indexOfPage = 0;
+	 indexOfPage = 0
 
-let score = 0;
+let score = 0
 
 const questions = [
 
@@ -35,8 +36,9 @@ const questions = [
 			`National Beef Association`,
 		], 
 		rightAnswer: 1, 
-	}
-  {
+	},
+
+	{
 		question: `In soccer, what body part can't touch the ball`,
 		options: [
 			`Feets`,
@@ -183,6 +185,7 @@ const questions = [
 
 ]
 
+
 numberOfAllQuestions.innerHTML = questions.length;
 
 const load = () => {
@@ -196,87 +199,107 @@ const load = () => {
 	numberOfQuestion.innerHTML = indexOfPage + 1;
 
 	indexOfPage ++;
-};
-
-let completedAnswers = [];
-const question = () =>{
-
-if (indexOfPage == questions.length){
-  quizFinish();
-} else {
-  if (completedAnswers.length > 0) {
-    completedAnswers.forEach(item => {
-      if (item == randomNumber) {
-        hitDuplicate = true;
-      }
-    });
-    if (hitDuplicate) {
-      randomQuestion()
-    } else {
-      indexOfQuestions = randomNumber;
-      load();
-    }
-  }
-  if (completedAnswers == 0) {
-    indexOfQuestions = randomNumber;
-    load();
-  }
 }
-completedAnswers.push(indexOfQuestions);
+
+
+
+let completedAnswers = []
+
+const randomQuestion =  () => {
+	let randomNumber = Math.floor(Math.random() * questions.length)
+	let hitDuplicate = false;
+
+	if (indexOfPage == questions.length){
+		quizFinish()
+	} else {
+		if (completedAnswers.length > 0) {
+			completedAnswers.forEach(item => {
+				if (item == randomNumber) {
+					hitDuplicate = true
+				}
+			});
+			if (hitDuplicate) {
+				randomQuestion()
+			} else {
+				indexOfQuestions = randomNumber
+				load()
+			}
+		}
+		if (completedAnswers == 0) {
+			indexOfQuestions = randomNumber
+			load();
+		}
+	}
+	completedAnswers.push(indexOfQuestions)
 };
+
 
 const checkAnswer = e => {
 	if (e.target.dataset.id == questions[indexOfQuestions].rightAnswer) {
-		e.target.classList.add('_right');
-		score++;
+		e.target.classList.add('_right')
+		score++
 	} else{
-		e.target.classList.add('_wrong');
+		e.target.classList.add('_wrong')
+		updateAnswerTracker('_wrong')
 	}
-	disabledOptions();
+	disabledOptions()
 };
+
+
 
 const disabledOptions = () => {
 	options.forEach(item => {
-		item.classList.add('_disabled');
+		item.classList.add('_disabled')
 		if (item.dataset.id == questions[indexOfQuestions].rightAnswer) {
-			item.classList.add('_right');
+			item.classList.add('_right')
 		}
-	});
+	})
 }
 
 const enabledOptions = () => {
 	options.forEach(item => {
-		item.classList.remove('_disabled', '_right', '_wrong');
-	});
+		item.classList.remove('_disabled', '_right', '_wrong')
+	})
 }
 
 const validate = () => {
 	if (!options[0].classList.contains('_disabled')) {
-		alert('Choose one of the answer options');
+		alert('Choose one of the answer options')
 	} else {
-		randomQuestion();
-		enabledOptions();
+		randomQuestion()
+		enabledOptions()
 	}
 }
 
 
-nextBtn.addEventListener('click', validate);
+nextBtn.addEventListener('click', validate)
+
 
 options.forEach(item => {
-	item.addEventListener('click', e => checkAnswer(e));
+	item.addEventListener('click', e => checkAnswer(e))
 })
 
 const quizFinish = () => {
-	popup.classList.add('_open');
-	document.body.classList.remove('_lock');
-	correctAnswers_popup.innerHTML = score;
-	numberOfAllQuestions_popup.innerHTML = questions.length;
+	popup.classList.add('_open')
+	document.body.classList.remove('_lock')
+	correctAnswers_popup.innerHTML = score
+	numberOfAllQuestions_popup.innerHTML = questions.length
 };
 
 tryAgainBtn_popup.addEventListener('click', () => {
-	window.location.reload();
+	window.location.reload()
 })
 
 window.addEventListener('load', () => {
 	randomQuestion();
 })
+
+
+function setFavicons(favImg){
+  let headTitle = document.querySelector('head');
+  let setFavicon = document.createElement('link');
+  setFavicon.setAttribute('rel','shortcut icon');
+  setFavicon.setAttribute('href',favImg);
+  headTitle.appendChild(setFavicon);
+}
+setFavicons('icons8-quiz-65.png');
